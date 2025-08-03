@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 const CartWidget = () => {
 	return (
 		<Box position="relative" display="inline-block">
-			<IconButton variant={"ghost"}>
+			<IconButton variant="ghost">
 				<ShoppingCart />
 			</IconButton>
 			<Badge
@@ -14,6 +14,7 @@ const CartWidget = () => {
 				position="absolute"
 				top="-1"
 				right="-1"
+				background="orange.200"
 			>
 				4
 			</Badge>

@@ -5,8 +5,8 @@ import Navbar from "./components/NavBar";
 function App() {
 	return (
 		<>
-			<Navbar /> <h1>Hola</h1>
-			<ItemListContainer mensaje={"Aqui no hay nada todavia."} />
+			<Navbar /> <h1>Pet Planet</h1>
+			<ItemListContainer mensaje="Aqui no hay nada todavia." />
 		</>
 	);
 }

@@ -2,104 +2,101 @@ import {
 	Box,
 	Flex,
 	Link,
-	Button,
 	HStack,
-	useDisclosure,
-	Stack,
-	Collapse,
 	Image,
 	IconButton,
+	useDisclosure,
+	Collapse,
+	Button,
+	VStack,
 } from "@chakra-ui/react";
-
-import { X, Menu, ShoppingCart } from "lucide-react";
-import logo2 from "../assets/logo2.png";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import logo2 from "/logo1.png";
 import CartWidget from "./CartWidget";
 
 const links = [
 	{ name: "Home", path: "/" },
 	{ name: "About", path: "/about" },
-	{ name: "Services", path: "/services" },
+	{ name: "Products", path: "/products" },
 	{ name: "Contact", path: "/contact" },
 ];
 
 const NavLink = ({ children, path }) => (
-	<>
-		<Link
-			px={4}
-			py={1}
-			_hover={{
-				textDecoration: "none",
-				textColor: "blue.200",
-			}}
-			href={path}
-		>
-			{children}
-		</Link>
-	</>
+	<Link
+		px={4}
+		_hover={{
+			textDecoration: "none",
+			textColor: "orange.600",
+		}}
+		href={path}
+	>
+		{children}
+	</Link>
 );
 
 const Navbar = () => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
-
-	const iconSize = "24px";
+	const { isOpen, onToggle } = useDisclosure();
 
 	return (
-		<>
-			<Box bg={"#ffffff"} borderBottom="1px" borderColor="gray.100">
-				{" "}
-				<Flex alignItems={"center"} justifyContent={"space-between"}>
-					<Button
-						onClick={isOpen ? onClose : onOpen}
-						aria-label={isOpen ? "Close menu" : "Open menu"}
-						display={{ base: "flex", md: "none" }}
-						p={2}
-						borderRadius="md"
-					>
-						{isOpen ? <X size={iconSize} /> : <Menu size={iconSize} />}
-					</Button>
+		<Box bg={"#ffffff"} borderBottom="1px" borderColor="orange.400" px={4}>
+			<Flex alignItems="center" justifyContent="space-between">
+				<Box>
+					<Link href="/">
+						<Image
+							src={logo2}
+							alt="Logo"
+							height={{ base: "60px", lg: "100px" }}
+							width="auto"
+						/>
+					</Link>
+				</Box>
 
-					<HStack display={"flex"}>
-						<Box>
-							<Link href="/">
-								<Image
-									src={logo2}
-									alt="Your Company Logo"
-									height={{ base: "40px", md: "60px" }}
-									width="auto"
-								/>
-							</Link>
-						</Box>
-						<HStack
-							as={"nav"}
-							spacing={4}
-							display={{ base: "none", md: "flex" }}
-						>
-							{links.map((link) => (
-								<NavLink key={link.name} path={link.path}>
-									{link.name}
-								</NavLink>
-							))}
-						</HStack>
-					</HStack>
+				<HStack
+					as={"nav"}
+					spacing={4}
+					display={{ base: "none", md: "flex" }}
+					flexGrow={1}
+					justifyContent="center"
+				>
+					{links.map((link) => (
+						<NavLink key={link.name} path={link.path}>
+							{link.name}
+						</NavLink>
+					))}
+				</HStack>
+				<VStack display={{ base: "none", md: "flex" }}>
+					<CartWidget />
+				</VStack>
 
-					<Flex alignItems={"center"}>
-						<CartWidget />
-					</Flex>
+				<Flex alignItems="center">
+					<IconButton
+						onClick={onToggle}
+						icon={
+							isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+						}
+						variant="ghost"
+						aria-label="Navigation"
+						display={{ md: "none" }}
+					/>
 				</Flex>
-				<Collapse in={isOpen} animateOpacity>
-					<Box pb={4} display={{ md: "none" }}>
-						{" "}
-						<Stack as={"nav"} spacing={4}>
-							{links.map((link) => (
-								<NavLink key={link.name} path={link.path}>
-									{link.name}
-								</NavLink>
-							))}
-						</Stack>
-					</Box>
-				</Collapse>
-			</Box>
-		</>
+			</Flex>
+
+			<Collapse in={isOpen} animateOpacity>
+				<Box pb={4} display={{ md: "none" }} textAlign="center">
+					<HStack as="nav" spacing={4} flexDirection="column">
+						{links.map((link) => (
+							<NavLink key={link.name} path={link.path}>
+								{link.name}
+							</NavLink>
+						))}
+
+						<Button variant="ghost" as={Link} href="#" mt={2}>
+							<CartWidget />
+						</Button>
+					</HStack>
+				</Box>
+			</Collapse>
+		</Box>
 	);
 };
 
