@@ -23,6 +23,8 @@ const links = [
 
 const NavLink = ({ children, path }) => (
 	<Link
+		fontFamily={"Georgia"}
+		fontSize={"18px"}
 		px={4}
 		_hover={{
 			textDecoration: "none",
