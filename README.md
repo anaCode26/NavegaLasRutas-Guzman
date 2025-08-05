@@ -1,12 +1,24 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🐾 Ecommerce - Tienda de Mascotas
 
-Currently, two official plugins are available:
+¡Bienvenido al repositorio de la Tienda de Mascotas! Este es un proyecto de ecommerce que está siendo desarrollado como parte del curso de Coderhouse. Actualmente, nos encontramos en la primera fase de desarrollo, enfocada en la estructura inicial de la interfaz de usuario.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías Utilizadas
+Este proyecto utiliza las siguientes tecnologías:
 
-## Expanding the ESLint configuration
+### Frontend:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js: Biblioteca de JavaScript para la construcción de la interfaz de usuario.
+
+- Chakra UI: Un framework de componentes de React simple, modular y accesible.
+
+### Backend:
+
+- Firebase
+
+## 💻 Instalación y Uso
+
+- Clonar el repositorio
+- run: npm install
+- start: npm run dev
