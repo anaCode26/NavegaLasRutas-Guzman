@@ -1,11 +1,11 @@
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer";
-import Navbar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 
 function App() {
 	return (
 		<>
-			<Navbar /> <h1>Pet Planet</h1>
+			<NavBar /> <h1>Pet Planet</h1>
 			<ItemListContainer mensaje="Aqui no hay nada todavia." />
 		</>
 	);
