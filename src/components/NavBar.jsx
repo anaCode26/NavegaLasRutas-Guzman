@@ -82,7 +82,7 @@ const Navbar = () => {
 					/>
 				</Flex>
 			</Flex>
-
+			{/* //https://rickandmortyapi.com/ */}
 			<Collapse in={isOpen} animateOpacity>
 				<Box pb={4} display={{ md: "none" }} textAlign="center">
 					<HStack as="nav" spacing={4} flexDirection="column">
