@@ -9,11 +9,14 @@ function App() {
 			<BrowserRouter>
 				<NavBar /> <h1>Pet Planet</h1>
 				<Routes>
+					<Route path="/" element="Hola desde Home." />
+					<Route path="/about" element="Hola desde About." />
 					<Route
-						path="/"
-						element={<ItemListContainer mensaje="Aqui no hay nada todavia." />}
-					/>
-					{/* <Route path="/item" element={<ItemDetailContainer />} /> */}
+						path="/products"
+						element={<ItemListContainer mensaje="Hola desde products." />}
+					/>{" "}
+					<Route path="/contact" element="Hola desde Contact." />
+					<Route path="*" element={<h2>Not Found</h2>} />
 				</Routes>
 			</BrowserRouter>
 		</>

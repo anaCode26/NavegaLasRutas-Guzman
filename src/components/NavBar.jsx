@@ -1,8 +1,8 @@
 import {
 	Box,
 	Flex,
-	Link,
 	HStack,
+	Link,
 	Image,
 	IconButton,
 	useDisclosure,
@@ -10,6 +10,7 @@ import {
 	Button,
 	VStack,
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo2 from "/logo1.png";
 import CartWidget from "./CartWidget";
@@ -23,6 +24,8 @@ const links = [
 
 const NavLink = ({ children, path }) => (
 	<Link
+		as={RouterLink}
+		to={path}
 		fontFamily={"Georgia"}
 		fontSize={"18px"}
 		px={4}
@@ -30,7 +33,6 @@ const NavLink = ({ children, path }) => (
 			textDecoration: "none",
 			textColor: "orange.600",
 		}}
-		href={path}
 	>
 		{children}
 	</Link>
@@ -43,7 +45,7 @@ const Navbar = () => {
 		<Box bg={"#ffffff"} borderBottom="1px" borderColor="orange.400" px={4}>
 			<Flex alignItems="center" justifyContent="space-between">
 				<Box>
-					<Link href="/">
+					<Link as={RouterLink} to="/">
 						<Image
 							src={logo2}
 							alt="Logo"
