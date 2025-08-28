@@ -274,7 +274,7 @@ export const getProducts = () => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			resolve(products);
-		}, 2000);
+		}, 1000);
 	});
 };
 
@@ -287,7 +287,7 @@ export const getItem = (id) => {
 			} else {
 				reject(new Error("Product not found!"));
 			}
-		}, 2000);
+		}, 1000);
 	});
 };
 
@@ -302,6 +302,6 @@ export const getProductsByType = (type) => {
 			} else {
 				reject(new Error(`No products found for type: ${type}`));
 			}
-		}, 2000);
+		}, 1000);
 	});
 };
