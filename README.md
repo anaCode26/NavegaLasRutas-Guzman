@@ -8,8 +8,6 @@ Este repositorio documenta el progreso de un proyecto en constante evolución. A
 
 - Navegación Dinámica: Implementación de React Router para una navegación fluida y una arquitectura de componentes clara.
 
-- Consumo de API: Conectividad con una API de Pokémon para mostrar un catálogo de productos dinámico y en tiempo real.
-
 - Filtrado por Categorías: Funcionalidad de filtrado que permite a los usuarios explorar productos por tipo (categoría).
 
 ## 🚀 Tecnologías Utilizadas
