@@ -10,8 +10,11 @@ import {
 	Stack,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import ItemCount from "./ItemCount";
+//import { useContext } from "react";
 
 const ItemDetail = ({ detail }) => {
+	//const [addItem] = useContext()
 	const navigate = useNavigate();
 
 	const handleGoBack = () => {
@@ -58,6 +61,7 @@ const ItemDetail = ({ detail }) => {
 					<Text>{detail.description}</Text>
 				</CardBody>
 				<CardFooter>
+					<ItemCount stock={detail.stock} />
 					<Button variant="solid" colorScheme="orange">
 						Add to Cart
 					</Button>
