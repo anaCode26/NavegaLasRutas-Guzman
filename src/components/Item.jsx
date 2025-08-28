@@ -41,8 +41,7 @@ const Item = ({ prod }) => {
 							</Flex>
 						)}
 					</Heading>
-					<Text>Height: {prod.height / 10} m</Text>
-					<Text>Weight: {prod.weight / 10} kg</Text>
+					<Text>{prod.description}</Text>
 				</Stack>
 			</CardBody>
 			<CardFooter gap="2" justifyContent="center">

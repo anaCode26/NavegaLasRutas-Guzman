@@ -14,8 +14,11 @@ function App() {
 					<Route path="/" element={<ItemListContainer />} />
 					<Route path="/about" element="Hola desde About." />
 					<Route path="/products" element={<ItemListContainer />} />
-					<Route path="/category/:type" element={<ItemListContainer />} />
-					<Route path="/product/:id" element={<ItemDetailContainer />} />
+					<Route
+						path="/category/:productType"
+						element={<ItemListContainer />}
+					/>
+					<Route path="/item/:id" element={<ItemDetailContainer />} />
 					<Route path="/contact" element="Hola desde Contact." />
 					<Route path="*" element={<ErrorComponent />} />
 				</Routes>

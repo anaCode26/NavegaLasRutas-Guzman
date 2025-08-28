@@ -1,35 +1,26 @@
+// En ItemListContainer.js
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByType, getItem } from "../mock/AsyncMock";
+import { getProducts, getProductsByType } from "../mock/AsyncMock";
 
 const ItemListContainer = ({ mensaje }) => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const { type } = useParams();
+	const { productType } = useParams(); // Ahora obtienes productType
 
 	useEffect(() => {
 		setLoading(true);
 
 		const fetchData = async () => {
 			try {
-				let pokemonBaseList;
-				if (type) {
-					const typeData = await getProductsByType(type);
-					pokemonBaseList = typeData.slice(0, 20);
+				let productsList;
+				if (productType) {
+					productsList = await getProductsByType(productType);
 				} else {
-					const allData = await getProducts();
-					pokemonBaseList = allData;
+					productsList = await getProducts();
 				}
-
-				const fullPokemonDataPromises = pokemonBaseList.map(async (pokemon) => {
-					const pokemonId = pokemon.url.split("/").filter(Boolean).pop();
-					const fullData = await getItem(pokemonId);
-					return fullData;
-				});
-
-				const fullPokemonList = await Promise.all(fullPokemonDataPromises);
-				setData(fullPokemonList);
+				setData(productsList);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			} finally {
@@ -38,17 +29,19 @@ const ItemListContainer = ({ mensaje }) => {
 		};
 
 		fetchData();
-	}, [type]);
+	}, [productType]);
 
 	if (loading) {
-		return <div>Loading...</div>;
+		return <div>Cargando...</div>;
 	}
 
 	return (
 		<div>
 			<h1>
 				{mensaje}{" "}
-				{type && <span style={{ textTransform: "capitalize" }}>{type}</span>}
+				{productType && (
+					<span style={{ textTransform: "capitalize" }}>{productType}</span>
+				)}
 			</h1>
 			<ItemList data={data} />
 		</div>

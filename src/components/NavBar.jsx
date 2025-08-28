@@ -26,16 +26,7 @@ const links = [
 	{ name: "Contact", path: "/contact" },
 ];
 
-const pokemonTypes = [
-	"normal",
-	"fire",
-	"water",
-	"grass",
-	"electric",
-	"ice",
-	"fighting",
-	"poison",
-];
+const productTypes = ["food", "toys", "brandFood", "hygiene", "accessories"];
 
 const NavLink = ({ children, path }) => (
 	<Link
@@ -96,7 +87,7 @@ const Navbar = () => {
 										{link.name}
 									</MenuButton>
 									<MenuList zIndex={10}>
-										{pokemonTypes.map((type) => (
+										{productTypes.map((type) => (
 											<MenuItem
 												as={RouterLink}
 												to={`/category/${type}`}
@@ -149,7 +140,7 @@ const Navbar = () => {
 											{link.name}
 										</MenuButton>
 										<MenuList zIndex={10}>
-											{pokemonTypes.map((type) => (
+											{productTypes.map((type) => (
 												<MenuItem
 													as={RouterLink}
 													to={`/category/${type}`}

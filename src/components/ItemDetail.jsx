@@ -44,26 +44,18 @@ const ItemDetail = ({ detail }) => {
 				<CardBody>
 					<Heading size="md">{detail.name}</Heading>
 
-					{detail.abilities && (
-						<Text mt={4} fontSize="sm">
-							Abilities:{" "}
-							{detail.abilities.map((abilityObj, index) => (
-								<Badge
-									as="span"
-									m={2}
-									colorScheme={"purple"}
-									key={abilityObj.ability.name}
-									textTransform="capitalize"
-								>
-									{abilityObj.ability.name}
-									{index < detail.abilities.length - 1 ? ", " : ""}
-								</Badge>
-							))}
-						</Text>
-					)}
+					<Text mt={4} fontSize="sm">
+						<Badge
+							as="span"
+							m={2}
+							colorScheme={"purple"}
+							textTransform="capitalize"
+						>
+							{detail.productType}
+						</Badge>
+					</Text>
 
-					<Text mt={4}>Height: {detail.height / 10} m</Text>
-					<Text>Weight: {detail.weight / 10} kg</Text>
+					<Text>{detail.description}</Text>
 				</CardBody>
 				<CardFooter>
 					<Button variant="solid" colorScheme="orange">
