@@ -2,7 +2,15 @@
 
 🐾 Ecommerce - Tienda de Mascotas
 
-¡Bienvenido al repositorio de la Tienda de Mascotas! Este es un proyecto de ecommerce que está siendo desarrollado como parte del curso de Coderhouse. Actualmente, nos encontramos en la primera fase de desarrollo, enfocada en la estructura inicial de la interfaz de usuario.
+¡Bienvenido a la Tienda de Mascotas, un proyecto de ecommerce desarrollado como parte del curso de Coderhouse!
+
+Este repositorio documenta el progreso de un proyecto en constante evolución. Actualmente, hemos superado la fase inicial de maquetación y hemos integrado funcionalidades clave para una experiencia de usuario completa:
+
+- Navegación Dinámica: Implementación de React Router para una navegación fluida y una arquitectura de componentes clara.
+
+- Consumo de API: Conectividad con una API de Pokémon para mostrar un catálogo de productos dinámico y en tiempo real.
+
+- Filtrado por Categorías: Funcionalidad de filtrado que permite a los usuarios explorar productos por tipo (categoría).
 
 ## 🚀 Tecnologías Utilizadas
 Este proyecto utiliza las siguientes tecnologías:
