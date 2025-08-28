@@ -1,4 +1,3 @@
-// En ItemListContainer.js
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
@@ -7,7 +6,7 @@ import { getProducts, getProductsByType } from "../mock/AsyncMock";
 const ItemListContainer = ({ mensaje }) => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const { productType } = useParams(); // Ahora obtienes productType
+	const { productType } = useParams();
 
 	useEffect(() => {
 		setLoading(true);
