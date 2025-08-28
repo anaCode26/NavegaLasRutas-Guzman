@@ -41,11 +41,17 @@ const Item = ({ prod }) => {
 							</Flex>
 						)}
 					</Heading>
+
 					<Text>{prod.description}</Text>
+					<Flex justifyContent={"center"} pt={4}>
+						<Badge p={2} color={"red"}>
+							$ {prod.price}
+						</Badge>
+					</Flex>
 				</Stack>
 			</CardBody>
 			<CardFooter gap="2" justifyContent="center">
-				<Link to={`/product/${pokemonId}`}>
+				<Link to={`/item/${prod.id}`}>
 					<Button variant="solid" colorScheme="orange">
 						See more
 					</Button>
