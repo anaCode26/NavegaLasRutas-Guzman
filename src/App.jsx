@@ -2,21 +2,22 @@ import "./App.css";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import ErrorComponent from "./components/ErrorComponent";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<NavBar /> <h1>Pet Planet</h1>
+				<NavBar />
 				<Routes>
-					<Route path="/" element="Hola desde Home." />
+					<Route path="/" element={<ItemListContainer />} />
 					<Route path="/about" element="Hola desde About." />
-					<Route
-						path="/products"
-						element={<ItemListContainer mensaje="Hola desde products." />}
-					/>{" "}
+					<Route path="/products" element={<ItemListContainer />} />
+					<Route path="/category/:type" element={<ItemListContainer />} />
+					<Route path="/product/:id" element={<ItemDetailContainer />} />
 					<Route path="/contact" element="Hola desde Contact." />
-					<Route path="*" element={<h2>Not Found</h2>} />
+					<Route path="*" element={<ErrorComponent />} />
 				</Routes>
 			</BrowserRouter>
 		</>

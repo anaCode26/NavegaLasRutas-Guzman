@@ -9,9 +9,13 @@ import {
 	Collapse,
 	Button,
 	VStack,
+	Menu,
+	MenuButton,
+	MenuList,
+	MenuItem,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import logo2 from "/logo1.png";
 import CartWidget from "./CartWidget";
 
@@ -20,6 +24,17 @@ const links = [
 	{ name: "About", path: "/about" },
 	{ name: "Products", path: "/products" },
 	{ name: "Contact", path: "/contact" },
+];
+
+const pokemonTypes = [
+	"normal",
+	"fire",
+	"water",
+	"grass",
+	"electric",
+	"ice",
+	"fighting",
+	"poison",
 ];
 
 const NavLink = ({ children, path }) => (
@@ -62,11 +77,44 @@ const Navbar = () => {
 					flexGrow={1}
 					justifyContent="center"
 				>
-					{links.map((link) => (
-						<NavLink key={link.name} path={link.path}>
-							{link.name}
-						</NavLink>
-					))}
+					{links.map((link) => {
+						if (link.name === "Products") {
+							return (
+								<Menu key={link.name}>
+									<MenuButton
+										as={Button}
+										rightIcon={<ChevronDownIcon />}
+										variant="ghost"
+										fontFamily={"Georgia"}
+										fontSize={"18px"}
+										px={4}
+										_hover={{
+											textDecoration: "none",
+											textColor: "orange.600",
+										}}
+									>
+										{link.name}
+									</MenuButton>
+									<MenuList zIndex={10}>
+										{pokemonTypes.map((type) => (
+											<MenuItem
+												as={RouterLink}
+												to={`/category/${type}`}
+												key={type}
+											>
+												{type.charAt(0).toUpperCase() + type.slice(1)}
+											</MenuItem>
+										))}
+									</MenuList>
+								</Menu>
+							);
+						}
+						return (
+							<NavLink key={link.name} path={link.path}>
+								{link.name}
+							</NavLink>
+						);
+					})}
 				</HStack>
 				<VStack display={{ base: "none", md: "flex" }}>
 					<CartWidget />
@@ -84,15 +132,42 @@ const Navbar = () => {
 					/>
 				</Flex>
 			</Flex>
-			{/* //https://rickandmortyapi.com/ */}
 			<Collapse in={isOpen} animateOpacity>
 				<Box pb={4} display={{ md: "none" }} textAlign="center">
 					<HStack as="nav" spacing={4} flexDirection="column">
-						{links.map((link) => (
-							<NavLink key={link.name} path={link.path}>
-								{link.name}
-							</NavLink>
-						))}
+						{links.map((link) => {
+							if (link.name === "Products") {
+								return (
+									<Menu key={link.name}>
+										<MenuButton
+											as={Button}
+											rightIcon={<ChevronDownIcon />}
+											variant="ghost"
+											fontFamily={"Georgia"}
+											fontSize={"18px"}
+										>
+											{link.name}
+										</MenuButton>
+										<MenuList zIndex={10}>
+											{pokemonTypes.map((type) => (
+												<MenuItem
+													as={RouterLink}
+													to={`/category/${type}`}
+													key={type}
+												>
+													{type.charAt(0).toUpperCase() + type.slice(1)}
+												</MenuItem>
+											))}
+										</MenuList>
+									</Menu>
+								);
+							}
+							return (
+								<NavLink key={link.name} path={link.path}>
+									{link.name}
+								</NavLink>
+							);
+						})}
 
 						<Button variant="ghost" as={Link} href="#" mt={2}>
 							<CartWidget />
