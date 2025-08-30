@@ -1,10 +1,11 @@
 import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
+import { Badge } from "@chakra-ui/react";
 
 const CartWIdgetIcons = () => {
-	const cart = useContext(CartContext);
+	const { cart } = useContext(CartContext);
 	console.log(cart);
-	return <Bagde></Bagde>;
+	return <Badge />;
 };
 
 export default CartWIdgetIcons;

@@ -11,11 +11,17 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
-//import { useContext } from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({ detail }) => {
-	//const [addItem] = useContext()
+	const { addItem } = useContext(CartContext);
 	const navigate = useNavigate();
+
+	const onAdd = (quantity) => {
+		console.log(quantity);
+		addItem(detail, quantity);
+	};
 
 	const handleGoBack = () => {
 		navigate(-1);
@@ -61,7 +67,7 @@ const ItemDetail = ({ detail }) => {
 					<Text>{detail.description}</Text>
 				</CardBody>
 				<CardFooter>
-					<ItemCount stock={detail.stock} />
+					<ItemCount stock={detail.stock} onAdd={onAdd} />
 					<Button variant="solid" colorScheme="orange">
 						Add to Cart
 					</Button>
