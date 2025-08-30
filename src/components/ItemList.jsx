@@ -3,7 +3,7 @@ import Item from "./Item";
 
 const ItemList = ({ data }) => {
 	return (
-		<Flex gap="8" p={6} justifyContent={"center"} wrap="wrap">
+		<Flex gap="6" p={4} justifyContent={"center"} wrap="wrap">
 			{data.map((prod, index) => (
 				<Item key={index} prod={prod} />
 			))}

@@ -20,7 +20,7 @@ import purizonGrainFree from "../assets/cat/food/purizon-grain-free.jpg";
 import royalAdult from "../assets/cat/food/royal-adult.jpg";
 import royalCoonAdult from "../assets/cat/food/royal-coon-adult.jpg";
 import royalDentalCare from "../assets/cat/food/royal-dental-care.jpg";
-import royalSterilized from "../assets/cat/royal-sterilized.jpg";
+import royalSterilized from "../assets/cat/food/royal-sterilized.jpg";
 
 import roundCarousel from "../assets/cat/toys/round-carousel.jpg";
 import scratchingPost from "../assets/cat/toys/scratching-post.jpg";
@@ -57,7 +57,7 @@ import trixieRope from "../assets/dog/toys/trixie-rope.jpg";
 import tabiminPellets from "../assets/fish/food/tabimin-pellets.jpg";
 import tetrapondGarden from "../assets/fish/food/tetrapond-garden.jpg";
 import tetrapondKoi from "../assets/fish/food/tetrapond-koi.jpg";
-import tetraponMulticrips from "../assets/fish/food/tetrapon-multicrips.jpg";
+import tetraponMulticrips from "../assets/fish/food/tetrapro-multicrips.jpg";
 
 import caviaGuinea from "../assets/rodents/food/cavia-guinea.jpg";
 import crispyHamsters from "../assets/rodents/food/crispy-hamsters.jpg";

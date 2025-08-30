@@ -13,50 +13,39 @@ import {
 import { Link } from "react-router-dom";
 
 const Item = ({ prod }) => {
-	const pokemonId = prod?.id;
-	if (!pokemonId) {
-		return null;
-	}
-	const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
 	return (
-		<Card maxW="sm" background={"orange.100"}>
-			<CardBody>
+		<Card maxW="60" background={"#FFF3E8"}>
+			<CardBody gap={2}>
 				<Flex justifyContent="center">
-					<Image src={imageUrl} alt={prod.name} borderRadius="lg" />
+					<Image src={prod.image} alt={prod.title} borderRadius="lg" />
 				</Flex>
 				<Stack mt="6" spacing="3">
-					<Heading size="md" textAlign="center">
-						{prod.name}
-						{prod.types && (
-							<Flex justifyContent={"center"} gap="2" m={6}>
-								{prod.types.map((typeObj) => (
-									<Badge
-										key={typeObj.type.name}
-										colorScheme="orange"
-										textTransform="capitalize"
-									>
-										{typeObj.type.name}
-									</Badge>
-								))}
-							</Flex>
-						)}
+					<Heading size="md" textAlign="center" noOfLines={1}>
+						{prod.title}
 					</Heading>
-
-					<Text>{prod.description}</Text>
-					<Flex justifyContent={"center"} pt={4}>
-						<Badge p={2} color={"red"}>
-							$ {prod.price}
+					<Flex justifyContent={"center"} gap="2" pt={2}>
+						<Badge colorScheme="blue" textTransform="capitalize">
+							{prod.petType}
 						</Badge>
+						<Badge colorScheme="purple" textTransform="capitalize">
+							{prod.productType}
+						</Badge>
+					</Flex>
+					<Text noOfLines={3}>{prod.description}</Text>
+					<Flex justifyContent={"center"} pt={2}>
+						<Text fontSize={20} color={"red"} fontWeight="semibold">
+							$ {prod.price}
+						</Text>
 					</Flex>
 				</Stack>
 			</CardBody>
 			<CardFooter gap="2" justifyContent="center">
 				<Link to={`/item/${prod.id}`}>
-					<Button variant="solid" colorScheme="orange">
+					<Button variant="solid" colorScheme="orange" fontSize={14}>
 						See more
 					</Button>
 				</Link>
-				<Button variant="solid" colorScheme="gray">
+				<Button variant="solid" colorScheme="gray" fontSize={14}>
 					Add to cart
 				</Button>
 			</CardFooter>

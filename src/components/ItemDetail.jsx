@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import Loader from "../components/Loader";
 
 const ItemDetail = ({ detail }) => {
 	const { addItem } = useContext(CartContext);
@@ -28,30 +29,28 @@ const ItemDetail = ({ detail }) => {
 	};
 
 	if (!detail) {
-		return <Text>Loading...</Text>;
+		return <Loader />;
 	}
-
-	const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${detail.id}.png`;
 
 	return (
 		<Card
 			direction={{ base: "column", sm: "row" }}
 			overflow="hidden"
-			maxW="xl"
-			width="100%"
+			maxW="80%"
 			mt={20}
-			background={"orange.100"}
+			background={"#FFF3E8"}
 		>
 			<Image
-				src={imageUrl}
-				alt={detail.name}
+				src={detail.image}
+				alt={detail.title}
 				boxSize={{ base: "200px", sm: "250px" }}
+				borderRadius="lg"
 				objectFit="cover"
 				m={4}
 			/>
 			<Stack>
 				<CardBody>
-					<Heading size="md">{detail.name}</Heading>
+					<Heading size="md">{detail.title}</Heading>
 
 					<Text mt={4} fontSize="sm">
 						<Badge
@@ -60,21 +59,33 @@ const ItemDetail = ({ detail }) => {
 							colorScheme={"purple"}
 							textTransform="capitalize"
 						>
+							{detail.petType}
+						</Badge>
+						<Badge
+							as="span"
+							m={2}
+							colorScheme={"blue"}
+							textTransform="capitalize"
+						>
 							{detail.productType}
 						</Badge>
 					</Text>
 
 					<Text>{detail.description}</Text>
+					<Text fontSize={20} color={"red"} pt={4} fontWeight="semibold">
+						$ {detail.price}
+					</Text>
 				</CardBody>
 				<CardFooter>
-					<ItemCount stock={detail.stock} onAdd={onAdd} />
-					<Button variant="solid" colorScheme="orange">
+					{/* <ItemCount stock={detail.stock} onAdd={onAdd} /> */}
+					<Button variant="solid" colorScheme="orange" fontSize={14}>
 						Add to Cart
 					</Button>
 					<Button
 						ml={4}
 						variant="solid"
 						colorScheme="gray"
+						fontSize={14}
 						onClick={handleGoBack}
 					>
 						Go Back

@@ -26,7 +26,7 @@ const links = [
 	{ name: "Contact", path: "/contact" },
 ];
 
-const productTypes = ["food", "toys", "brandFood", "hygiene", "accessories"];
+const productTypes = ["food", "toys", "bed", "clothes"];
 
 const NavLink = ({ children, path }) => (
 	<Link
