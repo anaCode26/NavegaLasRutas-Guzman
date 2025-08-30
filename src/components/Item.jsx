@@ -20,7 +20,7 @@ const Item = ({ prod }) => {
 					<Image src={prod.image} alt={prod.title} borderRadius="lg" />
 				</Flex>
 				<Stack mt="6" spacing="3">
-					<Heading size="md" textAlign="center" noOfLines={1}>
+					<Heading size="md" textAlign="center">
 						{prod.title}
 					</Heading>
 					<Flex justifyContent={"center"} gap="2" pt={2}>
@@ -31,7 +31,6 @@ const Item = ({ prod }) => {
 							{prod.productType}
 						</Badge>
 					</Flex>
-					<Text noOfLines={3}>{prod.description}</Text>
 					<Flex justifyContent={"center"} pt={2}>
 						<Text fontSize={20} color={"red"} fontWeight="semibold">
 							$ {prod.price}
