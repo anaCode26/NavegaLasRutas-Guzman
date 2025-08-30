@@ -79,7 +79,7 @@ const ItemDetail = ({ detail }) => {
 				<CardFooter>
 					{/* <ItemCount stock={detail.stock} onAdd={onAdd} /> */}
 					<Button variant="solid" colorScheme="orange" fontSize={14}>
-						Add to Cart
+						Buy Product
 					</Button>
 					<Button
 						ml={4}

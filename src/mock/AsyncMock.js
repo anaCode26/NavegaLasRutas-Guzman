@@ -79,6 +79,7 @@ const products = [
 		petType: "bird",
 		productType: "food",
 		image: farmBudgie,
+		hasDiscount: false,
 	},
 	{
 		id: 2,
@@ -89,6 +90,7 @@ const products = [
 		petType: "bird",
 		productType: "food",
 		image: lillebroInsects,
+		hasDiscount: true,
 	},
 	{
 		id: 3,
@@ -99,6 +101,7 @@ const products = [
 		petType: "bird",
 		productType: "food",
 		image: prestigeParakeet,
+		hasDiscount: false,
 	},
 	{
 		id: 4,
@@ -109,6 +112,7 @@ const products = [
 		petType: "bird",
 		productType: "food",
 		image: prestigePremium,
+		hasDiscount: false,
 	},
 	{
 		id: 5,
@@ -119,6 +123,7 @@ const products = [
 		petType: "bird",
 		productType: "toys",
 		image: tiakiLadder,
+		hasDiscount: true,
 	},
 	{
 		id: 6,
@@ -129,6 +134,7 @@ const products = [
 		petType: "bird",
 		productType: "toys",
 		image: tiakiSuspension,
+		hasDiscount: false,
 	},
 	{
 		id: 7,
@@ -139,6 +145,7 @@ const products = [
 		petType: "bird",
 		productType: "toys",
 		image: trixieSwing,
+		hasDiscount: false,
 	},
 	{
 		id: 8,
@@ -149,6 +156,7 @@ const products = [
 		petType: "bird",
 		productType: "toys",
 		image: trixieTower,
+		hasDiscount: false,
 	},
 	{
 		id: 9,
@@ -159,6 +167,7 @@ const products = [
 		petType: "cat",
 		productType: "bed",
 		image: cozyCave,
+		hasDiscount: true,
 	},
 	{
 		id: 10,
@@ -169,6 +178,7 @@ const products = [
 		petType: "cat",
 		productType: "bed",
 		image: radiatorBed,
+		hasDiscount: false,
 	},
 	{
 		id: 11,
@@ -179,6 +189,7 @@ const products = [
 		petType: "cat",
 		productType: "bed",
 		image: trixieCave,
+		hasDiscount: false,
 	},
 	{
 		id: 12,
@@ -189,6 +200,7 @@ const products = [
 		petType: "cat",
 		productType: "bed",
 		image: trixiePost,
+		hasDiscount: false,
 	},
 	{
 		id: 13,
@@ -199,6 +211,7 @@ const products = [
 		petType: "cat",
 		productType: "bed",
 		image: wallBed,
+		hasDiscount: false,
 	},
 	{
 		id: 14,
@@ -209,6 +222,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: hillsKitten,
+		hasDiscount: true,
 	},
 	{
 		id: 15,
@@ -219,6 +233,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: hillsOralCare,
+		hasDiscount: false,
 	},
 	{
 		id: 16,
@@ -229,6 +244,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: purizonChicken,
+		hasDiscount: false,
 	},
 	{
 		id: 17,
@@ -239,6 +255,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: purizonGrainFree,
+		hasDiscount: false,
 	},
 	{
 		id: 18,
@@ -249,6 +266,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: royalAdult,
+		hasDiscount: true,
 	},
 	{
 		id: 19,
@@ -259,6 +277,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: royalCoonAdult,
+		hasDiscount: false,
 	},
 	{
 		id: 20,
@@ -269,6 +288,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: royalDentalCare,
+		hasDiscount: false,
 	},
 	{
 		id: 21,
@@ -279,6 +299,7 @@ const products = [
 		petType: "cat",
 		productType: "food",
 		image: royalSterilized,
+		hasDiscount: false,
 	},
 	{
 		id: 22,
@@ -289,6 +310,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: roundCarousel,
+		hasDiscount: true,
 	},
 	{
 		id: 23,
@@ -299,6 +321,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: scratchingPost,
+		hasDiscount: false,
 	},
 	{
 		id: 24,
@@ -309,6 +332,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: setBalls,
+		hasDiscount: false,
 	},
 	{
 		id: 25,
@@ -319,6 +343,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: squeakyMouse,
+		hasDiscount: false,
 	},
 	{
 		id: 26,
@@ -329,6 +354,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: toyComporta,
+		hasDiscount: true,
 	},
 	{
 		id: 27,
@@ -339,6 +365,7 @@ const products = [
 		petType: "cat",
 		productType: "toys",
 		image: tunnel,
+		hasDiscount: false,
 	},
 	{
 		id: 28,
@@ -349,6 +376,7 @@ const products = [
 		petType: "dog",
 		productType: "bed",
 		image: blanketPaw,
+		hasDiscount: false,
 	},
 	{
 		id: 29,
@@ -359,6 +387,7 @@ const products = [
 		petType: "dog",
 		productType: "bed",
 		image: cozyBed,
+		hasDiscount: false,
 	},
 	{
 		id: 30,
@@ -369,6 +398,7 @@ const products = [
 		petType: "dog",
 		productType: "bed",
 		image: cozyBlanket,
+		hasDiscount: true,
 	},
 	{
 		id: 31,
@@ -379,6 +409,7 @@ const products = [
 		petType: "dog",
 		productType: "bed",
 		image: mattressSoft,
+		hasDiscount: false,
 	},
 	{
 		id: 32,
@@ -389,6 +420,7 @@ const products = [
 		petType: "dog",
 		productType: "clothes",
 		image: microfiberBathrobe,
+		hasDiscount: false,
 	},
 	{
 		id: 33,
@@ -399,6 +431,7 @@ const products = [
 		petType: "dog",
 		productType: "clothes",
 		image: rainJacket,
+		hasDiscount: false,
 	},
 	{
 		id: 34,
@@ -409,6 +442,7 @@ const products = [
 		petType: "dog",
 		productType: "clothes",
 		image: softHarness,
+		hasDiscount: false,
 	},
 	{
 		id: 35,
@@ -419,6 +453,7 @@ const products = [
 		petType: "dog",
 		productType: "clothes",
 		image: trixieCollar,
+		hasDiscount: true,
 	},
 	{
 		id: 36,
@@ -429,6 +464,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: eukaGoldenRetriever,
+		hasDiscount: true,
 	},
 	{
 		id: 37,
@@ -439,6 +475,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: eukaSensitiveSkin,
+		hasDiscount: false,
 	},
 	{
 		id: 38,
@@ -449,6 +486,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: hillsPerfectWeight,
+		hasDiscount: true,
 	},
 	{
 		id: 39,
@@ -459,6 +497,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: hillsPuppy,
+		hasDiscount: false,
 	},
 	{
 		id: 40,
@@ -469,6 +508,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: hillsSensitiveStomach,
+		hasDiscount: false,
 	},
 	{
 		id: 41,
@@ -479,6 +519,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: royalGoldenRetriever,
+		hasDiscount: false,
 	},
 	{
 		id: 42,
@@ -489,6 +530,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: royalHypoallergenic,
+		hasDiscount: false,
 	},
 	{
 		id: 43,
@@ -499,6 +541,7 @@ const products = [
 		petType: "dog",
 		productType: "food",
 		image: royalMiniAdult,
+		hasDiscount: false,
 	},
 	{
 		id: 44,
@@ -509,6 +552,7 @@ const products = [
 		petType: "dog",
 		productType: "toys",
 		image: kongBalls,
+		hasDiscount: true,
 	},
 	{
 		id: 45,
@@ -519,6 +563,7 @@ const products = [
 		petType: "dog",
 		productType: "toys",
 		image: talkingButtons,
+		hasDiscount: false,
 	},
 	{
 		id: 46,
@@ -529,6 +574,7 @@ const products = [
 		petType: "dog",
 		productType: "toys",
 		image: tiakiAvocado,
+		hasDiscount: false,
 	},
 	{
 		id: 47,
@@ -539,6 +585,7 @@ const products = [
 		petType: "dog",
 		productType: "toys",
 		image: tiakiOctopus,
+		hasDiscount: false,
 	},
 	{
 		id: 48,
@@ -549,6 +596,7 @@ const products = [
 		petType: "dog",
 		productType: "toys",
 		image: trixieRope,
+		hasDiscount: false,
 	},
 	{
 		id: 49,
@@ -559,6 +607,7 @@ const products = [
 		petType: "fish",
 		productType: "food",
 		image: tabiminPellets,
+		hasDiscount: false,
 	},
 	{
 		id: 50,
@@ -569,6 +618,7 @@ const products = [
 		petType: "fish",
 		productType: "food",
 		image: tetrapondGarden,
+		hasDiscount: false,
 	},
 	{
 		id: 51,
@@ -579,6 +629,7 @@ const products = [
 		petType: "fish",
 		productType: "food",
 		image: tetrapondKoi,
+		hasDiscount: false,
 	},
 	{
 		id: 52,
@@ -589,6 +640,7 @@ const products = [
 		petType: "fish",
 		productType: "food",
 		image: tetraponMulticrips,
+		hasDiscount: true,
 	},
 	{
 		id: 53,
@@ -599,6 +651,7 @@ const products = [
 		petType: "rodents",
 		productType: "food",
 		image: caviaGuinea,
+		hasDiscount: false,
 	},
 	{
 		id: 54,
@@ -609,6 +662,7 @@ const products = [
 		petType: "rodents",
 		productType: "food",
 		image: crispyHamsters,
+		hasDiscount: false,
 	},
 	{
 		id: 55,
@@ -619,6 +673,7 @@ const products = [
 		petType: "rodents",
 		productType: "food",
 		image: crispyMuesli,
+		hasDiscount: false,
 	},
 	{
 		id: 56,
@@ -629,6 +684,7 @@ const products = [
 		petType: "rodents",
 		productType: "food",
 		image: crispyRabbit,
+		hasDiscount: false,
 	},
 	{
 		id: 57,
@@ -639,6 +695,7 @@ const products = [
 		petType: "rodents",
 		productType: "toys",
 		image: playpenSunProtection,
+		hasDiscount: false,
 	},
 	{
 		id: 58,
@@ -649,6 +706,7 @@ const products = [
 		petType: "rodents",
 		productType: "toys",
 		image: snacky,
+		hasDiscount: false,
 	},
 	{
 		id: 59,
@@ -659,6 +717,7 @@ const products = [
 		petType: "rodents",
 		productType: "toys",
 		image: trixieBall,
+		hasDiscount: true,
 	},
 	{
 		id: 60,
@@ -669,6 +728,7 @@ const products = [
 		petType: "rodents",
 		productType: "toys",
 		image: tunnelRodents,
+		hasDiscount: false,
 	},
 ];
 

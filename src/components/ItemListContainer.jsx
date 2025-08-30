@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getProducts, getProductsByType } from "../mock/AsyncMock";
 import Loader from "./Loader";
 
-const ItemListContainer = ({ mensaje }) => {
+const ItemListContainer = () => {
 	const [data, setData] = useState([]);
 	const [loader, setLoader] = useState(true);
 	const { productType } = useParams();
@@ -37,12 +37,6 @@ const ItemListContainer = ({ mensaje }) => {
 				<Loader />
 			) : (
 				<div>
-					<h1>
-						{mensaje}{" "}
-						{productType && (
-							<span style={{ textTransform: "capitalize" }}>{productType}</span>
-						)}
-					</h1>
 					<ItemList data={data} />
 				</div>
 			)}
