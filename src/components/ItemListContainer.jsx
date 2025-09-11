@@ -1,34 +1,37 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByType } from "../mock/AsyncMock";
 import Loader from "./Loader";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../service/firebase";
 
 const ItemListContainer = () => {
 	const [data, setData] = useState([]);
-	const [loader, setLoader] = useState(true);
+	const [loader, setLoader] = useState(false);
 	const { productType } = useParams();
 
 	useEffect(() => {
 		setLoader(true);
 
-		const fetchData = async () => {
-			try {
-				let productsList;
-				if (productType) {
-					productsList = await getProductsByType(productType);
-				} else {
-					productsList = await getProducts();
-				}
-				setData(productsList);
-			} catch (error) {
-				console.error("Error fetching data:", error);
-			} finally {
-				setLoader(false);
-			}
-		};
+		const productsCollection = productType
+			? query(
+					collection(db, "products"),
+					where("productType", "==", productType),
+			  )
+			: collection(db, "products");
 
-		fetchData();
+		getDocs(productsCollection)
+			.then((res) => {
+				const list = res.docs.map((doc) => {
+					return {
+						id: doc.id,
+						...doc.data(),
+					};
+				});
+				setData(list);
+			})
+			.catch((error) => console.error(error))
+			.finally(() => setLoader(false));
 	}, [productType]);
 
 	return (
@@ -43,4 +46,5 @@ const ItemListContainer = () => {
 		</>
 	);
 };
+
 export default ItemListContainer;

@@ -1,5 +1,6 @@
-import { IconButton, Badge, Box } from "@chakra-ui/react";
+import { IconButton, Box } from "@chakra-ui/react";
 import { ShoppingCart } from "lucide-react";
+import CartWidgetIcons from "./CartWidgetIcons";
 
 const CartWidget = () => {
 	return (
@@ -7,17 +8,7 @@ const CartWidget = () => {
 			<IconButton variant="ghost">
 				<ShoppingCart />
 			</IconButton>
-			<Badge
-				colorScheme="red"
-				borderRadius="full"
-				px="2"
-				position="absolute"
-				top="-1"
-				right="-1"
-				background="orange.200"
-			>
-				4
-			</Badge>
+			<CartWidgetIcons />
 		</Box>
 	);
 };

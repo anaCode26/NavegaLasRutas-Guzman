@@ -9,18 +9,20 @@ import {
 	Text,
 	Stack,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as RouterLink } from "react-router-dom"; // Correct import
 import ItemCount from "./ItemCount";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import Loader from "../components/Loader";
 
 const ItemDetail = ({ detail }) => {
 	const { addItem } = useContext(CartContext);
+	const [purchase, setPurchase] = useState(false);
 	const navigate = useNavigate();
 
 	const onAdd = (quantity) => {
 		console.log(quantity);
+		setPurchase(true);
 		addItem(detail, quantity);
 	};
 
@@ -51,7 +53,6 @@ const ItemDetail = ({ detail }) => {
 			<Stack>
 				<CardBody>
 					<Heading size="md">{detail.title}</Heading>
-
 					<Text mt={4} fontSize="sm">
 						<Badge
 							as="span"
@@ -70,17 +71,20 @@ const ItemDetail = ({ detail }) => {
 							{detail.productType}
 						</Badge>
 					</Text>
-
 					<Text>{detail.description}</Text>
 					<Text fontSize={20} color={"red"} pt={4} fontWeight="semibold">
 						$ {detail.price}
 					</Text>
+					<Text fontSize={20} color={"red"} pt={4} fontWeight="semibold">
+						Stock : {detail.stock}
+					</Text>
+					{purchase ? (
+						<RouterLink to="/cart">Ir al carrito</RouterLink> // Use RouterLink here
+					) : (
+						<ItemCount stock={detail.stock} onAdd={onAdd} />
+					)}
 				</CardBody>
 				<CardFooter>
-					{/* <ItemCount stock={detail.stock} onAdd={onAdd} /> */}
-					<Button variant="solid" colorScheme="orange" fontSize={14}>
-						Buy Product
-					</Button>
 					<Button
 						ml={4}
 						variant="solid"

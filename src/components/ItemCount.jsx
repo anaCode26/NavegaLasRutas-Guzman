@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import { useState } from "react";
 
 const ItemCount = ({ stock, onAdd }) => {
-	const [count, setCount] = useState(1);
+	const [count, setCount] = useState(0);
 
 	const increment = () => {
 		if (count < stock) {
@@ -18,10 +18,15 @@ const ItemCount = ({ stock, onAdd }) => {
 
 	return (
 		<div>
-			<Button onClick={increment}>+</Button>
-			<span>{count}</span>
 			<Button onClick={decrement}>-</Button>
-			<Button onClick={() => onAdd(count)}>Buy Product</Button>
+			<span>{count}</span>
+			<Button onClick={increment}>+</Button>
+			<Button
+				onClick={() => onAdd(count)}
+				disabled={stock === 0 || count === 0}
+			>
+				Buy Product
+			</Button>
 		</div>
 	);
 };
