@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, HStack, Box } from "@chakra-ui/react";
 import { useState } from "react";
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -17,17 +17,29 @@ const ItemCount = ({ stock, onAdd }) => {
 	};
 
 	return (
-		<div>
-			<Button onClick={decrement}>-</Button>
-			<span>{count}</span>
-			<Button onClick={increment}>+</Button>
+		<HStack maxW="320px" mx="auto" mt={4} spacing={4}>
 			<Button
+				onClick={decrement}
+				isDisabled={count === 0}
+				size="sm"
+				fontFamily="Georgia"
+			>
+				-
+			</Button>
+			<Box textAlign="center" fontSize="lg" minW="3ch">
+				{count}
+			</Box>
+			<Button onClick={increment} isDisabled={count >= stock} size="sm">
+				+
+			</Button>
+			<Button
+				colorScheme="teal"
 				onClick={() => onAdd(count)}
-				disabled={stock === 0 || count === 0}
+				disabled={count === 0 || stock === 0}
 			>
 				Add to Cart
 			</Button>
-		</div>
+		</HStack>
 	);
 };
 

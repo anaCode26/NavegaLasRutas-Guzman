@@ -1,36 +1,45 @@
-import { createContext, useState, useMemo } from "react";
+import { createContext, useState, useMemo, useCallback } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
-	const addItem = (item, qty) => {
-		if (isInCart(item.id)) {
-			const cartUpdated = cart.map((prod) => {
-				if (item.id === prod.id) {
-					return { ...prod, quantity: prod.quantity + qty };
-				} else {
-					return prod;
-				}
-			});
-			setCart(cartUpdated);
-		} else {
-			setCart([...cart, { ...item, quantity: qty }]);
-		}
-	};
+	const addItem = useCallback(
+		(item, qty) => {
+			if (isInCart(item.id)) {
+				const cartUpdated = cart.map((prod) => {
+					if (item.id === prod.id) {
+						return { ...prod, quantity: prod.quantity + qty };
+					} else {
+						return prod;
+					}
+				});
+				setCart(cartUpdated);
+			} else {
+				setCart([...cart, { ...item, quantity: qty }]);
+			}
+		},
+		[cart],
+	);
 
-	const clear = () => {
+	const clear = useCallback(() => {
 		setCart([]);
-	};
+	}, []);
 
-	const removeItem = (id) => {
-		setCart(cart.filter((prod) => prod.id !== id));
-	};
+	const removeItem = useCallback(
+		(id) => {
+			setCart(cart.filter((prod) => prod.id !== id));
+		},
+		[cart],
+	);
 
-	const isInCart = (id) => {
-		return cart.some((prod) => prod.id === id);
-	};
+	const isInCart = useCallback(
+		(id) => {
+			return cart.some((prod) => prod.id === id);
+		},
+		[cart],
+	);
 
 	const cartQuantity = useMemo(() => {
 		return cart.reduce((acc, prod) => acc + prod.quantity, 0);

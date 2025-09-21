@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Badge } from "@chakra-ui/react";
 
 const CartWIdgetIcons = () => {
-	const { cart, cartQuantity } = useContext(CartContext);
+	const { cartQuantity } = useContext(CartContext);
 
 	const quantity = cartQuantity;
 

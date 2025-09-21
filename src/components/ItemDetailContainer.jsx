@@ -1,9 +1,9 @@
 import ItemDetail from "./ItemDetail";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
-import { doc, getDoc } from "firebase/firestore"; // Importa 'doc' y 'getDoc' de Firestore
-import { db } from "../service/firebase"; // Importa 'db' desde tu archivo de servicio
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../service/firebase";
 import Loader from "../components/Loader";
 
 const ItemDetailContainer = () => {
@@ -30,8 +30,7 @@ const ItemDetailContainer = () => {
 	if (invalid) {
 		return (
 			<div>
-				<h1>El producto no existe</h1>
-				<Link to="/">Ir a home</Link>
+				<h1>The product doesn't exist!</h1>
 			</div>
 		);
 	}

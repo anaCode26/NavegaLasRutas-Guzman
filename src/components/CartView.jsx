@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import {
-	Badge,
 	Box,
 	Button,
 	Card,
-	HStack,
 	Image,
 	Flex,
 	Divider,
@@ -57,7 +55,7 @@ const CartView = () => {
 									colorScheme="red"
 									onClick={() => removeItem(product.id)}
 								>
-									Eliminar
+									Delete
 								</Button>
 							</Box>
 						</Flex>
@@ -67,7 +65,7 @@ const CartView = () => {
 			<Divider my={8} />
 			<Box textAlign="center">
 				<Heading size="md" mb={4}>
-					Total a Pagar: $ {cartTotal}
+					Total: $ {cartTotal.toFixed(2)}
 				</Heading>
 				<Stack
 					direction={{ base: "column", md: "row" }}
@@ -75,10 +73,10 @@ const CartView = () => {
 					justifyContent="center"
 				>
 					<Button colorScheme="orange" onClick={clear}>
-						Vaciar Carrito
+						Remove All
 					</Button>
 					<Button colorScheme="teal" as={RouterLink} to="/checkout">
-						Terminar Compra
+						Buy Products
 					</Button>
 				</Stack>
 			</Box>

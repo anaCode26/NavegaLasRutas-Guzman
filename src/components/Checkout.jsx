@@ -38,10 +38,10 @@ const Checkout = () => {
 			>
 				<AlertIcon boxSize="40px" mr={0} />
 				<AlertTitle mt={4} mb={1} fontSize="lg">
-					¡Compra Exitosa! 🎉
+					Purchase Successful! 🎉
 				</AlertTitle>
 				<AlertDescription maxWidth="sm">
-					Tu pedido ha sido recibido y está en camino.
+					Your order has been received and is on its way.
 				</AlertDescription>
 				<CloseButton
 					position="absolute"
