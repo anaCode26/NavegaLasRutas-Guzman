@@ -12,14 +12,14 @@ import {
 	Heading,
 	Text,
 	CardBody,
-	CardFooter,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 const CartView = () => {
 	const { cart, removeItem, clear, total } = useContext(CartContext);
-	const cartTotal = total();
+
+	const cartTotal = total;
 
 	return (
 		<Box p={4}>
@@ -47,7 +47,7 @@ const CartView = () => {
 								<Heading size="md" mb="2">
 									{product.title}
 								</Heading>
-								<Text py="2">Cantidad: {product.quantity}</Text>
+								<Text py="2">Quantity: {product.quantity}</Text>
 								<Text color="blue.600" fontSize="lg" fontWeight="semibold">
 									$ {product.price} c/u
 								</Text>

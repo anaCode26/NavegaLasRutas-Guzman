@@ -7,26 +7,20 @@ import {
 	IconButton,
 	useDisclosure,
 	Collapse,
-	Button,
 	VStack,
-	Menu,
-	MenuButton,
-	MenuList,
-	MenuItem,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo2 from "/logo1.png";
 import CartWidget from "./CartWidget";
 
-const links = [
+const allLinks = [
 	{ name: "Home", path: "/" },
-	{ name: "About", path: "/about" },
-	{ name: "Products", path: "/products" },
-	{ name: "Contact", path: "/contact" },
+	{ name: "Food", path: "/category/food" },
+	{ name: "Toys", path: "/category/toys" },
+	{ name: "Bed", path: "/category/bed" },
+	{ name: "Clothes", path: "/category/clothes" },
 ];
-
-const productTypes = ["food", "toys", "bed", "clothes"];
 
 const NavLink = ({ children, path }) => (
 	<Link
@@ -68,44 +62,11 @@ const Navbar = () => {
 					flexGrow={1}
 					justifyContent="center"
 				>
-					{links.map((link) => {
-						if (link.name === "Products") {
-							return (
-								<Menu key={link.name}>
-									<MenuButton
-										as={Button}
-										rightIcon={<ChevronDownIcon />}
-										variant="ghost"
-										fontFamily={"Georgia"}
-										fontSize={"18px"}
-										px={4}
-										_hover={{
-											textDecoration: "none",
-											textColor: "orange.600",
-										}}
-									>
-										{link.name}
-									</MenuButton>
-									<MenuList zIndex={10}>
-										{productTypes.map((type) => (
-											<MenuItem
-												as={RouterLink}
-												to={`/category/${type}`}
-												key={type}
-											>
-												{type.charAt(0).toUpperCase() + type.slice(1)}
-											</MenuItem>
-										))}
-									</MenuList>
-								</Menu>
-							);
-						}
-						return (
-							<NavLink key={link.name} path={link.path}>
-								{link.name}
-							</NavLink>
-						);
-					})}
+					{allLinks.map((link) => (
+						<NavLink key={link.name} path={link.path}>
+							{link.name}
+						</NavLink>
+					))}
 				</HStack>
 				<VStack display={{ base: "none", md: "flex" }}>
 					<CartWidget />
@@ -123,47 +84,17 @@ const Navbar = () => {
 					/>
 				</Flex>
 			</Flex>
+
 			<Collapse in={isOpen} animateOpacity>
 				<Box pb={4} display={{ md: "none" }} textAlign="center">
-					<HStack as="nav" spacing={4} flexDirection="column">
-						{links.map((link) => {
-							if (link.name === "Products") {
-								return (
-									<Menu key={link.name}>
-										<MenuButton
-											as={Button}
-											rightIcon={<ChevronDownIcon />}
-											variant="ghost"
-											fontFamily={"Georgia"}
-											fontSize={"18px"}
-										>
-											{link.name}
-										</MenuButton>
-										<MenuList zIndex={10}>
-											{productTypes.map((type) => (
-												<MenuItem
-													as={RouterLink}
-													to={`/category/${type}`}
-													key={type}
-												>
-													{type.charAt(0).toUpperCase() + type.slice(1)}
-												</MenuItem>
-											))}
-										</MenuList>
-									</Menu>
-								);
-							}
-							return (
-								<NavLink key={link.name} path={link.path}>
-									{link.name}
-								</NavLink>
-							);
-						})}
-
-						<Button variant="ghost" as={Link} href="#" mt={2}>
-							<CartWidget />
-						</Button>
-					</HStack>
+					<VStack as="nav" spacing={4}>
+						{allLinks.map((link) => (
+							<NavLink key={link.name} path={link.path}>
+								{link.name}
+							</NavLink>
+						))}
+						<CartWidget />
+					</VStack>
 				</Box>
 			</Collapse>
 		</Box>

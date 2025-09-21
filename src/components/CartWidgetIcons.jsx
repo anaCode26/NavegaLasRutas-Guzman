@@ -4,7 +4,9 @@ import { Badge } from "@chakra-ui/react";
 
 const CartWIdgetIcons = () => {
 	const { cart, cartQuantity } = useContext(CartContext);
-	console.log(cart);
+
+	const quantity = cartQuantity;
+
 	return (
 		<Badge
 			colorScheme="red"
@@ -15,7 +17,7 @@ const CartWIdgetIcons = () => {
 			right="-1"
 			background="orange.200"
 		>
-			{cartQuantity()}
+			{quantity}
 		</Badge>
 	);
 };
