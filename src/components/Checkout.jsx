@@ -19,7 +19,7 @@ const Checkout = () => {
 
 		const timer = setTimeout(() => {
 			navigate("/");
-		}, 3000);
+		}, 6000);
 
 		return () => clearTimeout(timer);
 	}, [clear, navigate]);
