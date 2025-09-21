@@ -79,7 +79,7 @@ const ItemDetail = ({ detail }) => {
 						Stock : {detail.stock}
 					</Text>
 					{purchase ? (
-						<RouterLink to="/cart">Ir al carrito</RouterLink> // Use RouterLink here
+						<RouterLink to="/cart">Ir al carrito</RouterLink>
 					) : (
 						<ItemCount stock={detail.stock} onAdd={onAdd} />
 					)}

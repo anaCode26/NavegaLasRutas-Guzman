@@ -25,7 +25,7 @@ const ItemCount = ({ stock, onAdd }) => {
 				onClick={() => onAdd(count)}
 				disabled={stock === 0 || count === 0}
 			>
-				Buy Product
+				Add to Cart
 			</Button>
 		</div>
 	);
