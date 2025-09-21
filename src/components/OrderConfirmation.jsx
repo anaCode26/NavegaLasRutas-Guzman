@@ -38,15 +38,15 @@ const OrderConfirmation = ({ orderId }) => {
 			>
 				<AlertIcon boxSize="40px" mr={0} />
 				<AlertTitle mt={4} mb={1} fontSize="lg">
-					¡Compra Exitosa! 🎉
+					Purchase Successful! 🎉
 				</AlertTitle>
 				<AlertDescription maxWidth="sm">
-					Tu número de orden es: <br />
+					Your order number is: <br />
 					<Box as="span" fontWeight="bold" fontSize="md">
 						{orderId}
 					</Box>
 					<br />
-					Redireccionando a la página principal en 5 segundos...
+					Redirecting to the main page in 5 seconds...
 				</AlertDescription>
 				<CloseButton
 					position="absolute"
