@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { CartContext } from "../context/CartContext";
 
-const Checkout = () => {
+const OrderConfirmation = ({ orderId }) => {
 	const navigate = useNavigate();
 	const { clear } = useContext(CartContext);
 
@@ -19,7 +19,7 @@ const Checkout = () => {
 
 		const timer = setTimeout(() => {
 			navigate("/");
-		}, 6000);
+		}, 5000);
 
 		return () => clearTimeout(timer);
 	}, [clear, navigate]);
@@ -38,10 +38,15 @@ const Checkout = () => {
 			>
 				<AlertIcon boxSize="40px" mr={0} />
 				<AlertTitle mt={4} mb={1} fontSize="lg">
-					Purchase Successful! 🎉
+					¡Compra Exitosa! 🎉
 				</AlertTitle>
 				<AlertDescription maxWidth="sm">
-					Your order has been received and is on its way.
+					Tu número de orden es: <br />
+					<Box as="span" fontWeight="bold" fontSize="md">
+						{orderId}
+					</Box>
+					<br />
+					Redireccionando a la página principal en 5 segundos...
 				</AlertDescription>
 				<CloseButton
 					position="absolute"
@@ -54,4 +59,4 @@ const Checkout = () => {
 	);
 };
 
-export default Checkout;
+export default OrderConfirmation;

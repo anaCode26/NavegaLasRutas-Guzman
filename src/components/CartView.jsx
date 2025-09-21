@@ -11,12 +11,10 @@ import {
 	Text,
 	CardBody,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
-const CartView = () => {
+const CartView = ({ onBuy }) => {
 	const { cart, removeItem, clear, total } = useContext(CartContext);
-
 	const cartTotal = total;
 
 	return (
@@ -62,6 +60,7 @@ const CartView = () => {
 					</Card>
 				))}
 			</Flex>
+
 			<Divider my={8} />
 			<Box textAlign="center">
 				<Heading size="md" mb={4}>
@@ -75,7 +74,7 @@ const CartView = () => {
 					<Button colorScheme="orange" onClick={clear}>
 						Remove All
 					</Button>
-					<Button colorScheme="teal" as={RouterLink} to="/checkout">
+					<Button colorScheme="teal" onClick={onBuy}>
 						Buy Products
 					</Button>
 				</Stack>
